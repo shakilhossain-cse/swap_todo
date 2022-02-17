@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+// import { useState } from "react";
+import { useState } from "react";
+import { Container, Row } from "react-bootstrap";
+import Cards from "./components/Cards";
 
 function App() {
+  const [Tasks, setTasks] = useState([]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid>
+      <Row xs={1} sm={2} md={4} className="g-4 my-4">
+        <Cards header="Winnie" setTasks={setTasks} Tasks={Tasks} />
+        <Cards header="Brad" setTasks={setTasks} Tasks={Tasks} />
+        <Cards header="Bob" setTasks={setTasks} Tasks={Tasks} />
+        <Cards header="Thomas" setTasks={setTasks} Tasks={Tasks} />
+      </Row>
+    </Container>
   );
 }
 
